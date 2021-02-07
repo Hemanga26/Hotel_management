@@ -264,7 +264,7 @@ if(isset($_POST["sendmsg"]))
         <div class="col-md-3 col-sm-6">
           <div class="copyright-text">
             <p><br>Copyright &copy; 2021 <br>Hemanga Bora & Rabina
-              <br><br>Site Design: <a rel="nofollow" href="#" target="_parent"></a></p>
+              <br><br>Login as Admin: <a href="/admin/">Login</a></p>
           </div>
         </div>
       </div>

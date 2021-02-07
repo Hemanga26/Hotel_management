@@ -78,7 +78,9 @@ include('Database.php');
   </div>
 
 
-  <footer>
+ <!--footer-->
+
+ <footer>
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
@@ -104,10 +106,17 @@ include('Database.php');
           </div>
 
         </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="copyright-text">
+            <p><br>Copyright &copy; 2021 <br>Hemanga Bora & Rabina
+              <br><br>Login as Admin: <a href="/admin/">Login</a></p>
+          </div>
+        </div>
       </div>
 
     </div>
   </footer>
+
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
