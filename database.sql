@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2021 at 04:03 PM
+-- Generation Time: Feb 07, 2021 at 11:58 AM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,8 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Aid`, `Aname`, `Aemail`, `Apass`) VALUES
-(2, 'pranay', 'admin@admin.com', 'admin'),
-(8, 'pranay kalita', 'pranay@gmail.com', 'pranay123');
+(2, 'Hemanga', 'admin@admin.com', 'admin'),
+(8, 'Rabina', 'rabina@gmail.com', 'rabina');
 
 -- --------------------------------------------------------
 
@@ -55,6 +55,13 @@ CREATE TABLE `message` (
   `sub` varchar(255) NOT NULL,
   `msg` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `name`, `mail`, `sub`, `msg`) VALUES
+(7, 'hema', 'axc@x.com', 'acc', 'hello');
 
 -- --------------------------------------------------------
 
@@ -80,6 +87,13 @@ CREATE TABLE `reservation_table` (
   `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `reservation_table`
+--
+
+INSERT INTO `reservation_table` (`Rev_id`, `Rev_name`, `Rev_email`, `Rev_phone`, `Rev_IdnPan`, `Rev_Add`, `Rev_Sdate`, `Rev_Edate`, `rev_adults`, `rev_child`, `rev_totalguest`, `Rev_roomno`, `Rev_roomtype`, `Room_total`, `status`) VALUES
+(51, 'Bora', 'Bora@1.c', 123456789, 'DEWNJB', 'torajan', '2021-02-01', '2021-02-04', 2, 1, 3, 107, 'Double', 3000, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +107,30 @@ CREATE TABLE `room_table` (
   `RoomPrice` text DEFAULT NULL,
   `Room_status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room_table`
+--
+
+INSERT INTO `room_table` (`Roomid`, `RoomNo`, `RoomType`, `RoomPrice`, `Room_status`) VALUES
+(327, 101, 'Single Bed', '500', 0),
+(328, 102, 'Single Bed', '500', 0),
+(329, 103, 'Single Bed', '500', 0),
+(330, 105, 'Single Bed', '500', 0),
+(331, 104, 'Single Bed', '500', 0),
+(332, 106, 'Single Bed', '500', 0),
+(333, 107, 'Double Bed', '1000', 0),
+(334, 108, 'Double Bed', '1000', 0),
+(335, 109, 'Double Bed', '1000', 0),
+(336, 110, 'Double Bed', '1000', 0),
+(337, 111, 'Double Bed', '1000', 0),
+(338, 112, 'Double Bed', '1000', 0),
+(339, 113, 'King Size Bed', '3000', 0),
+(340, 114, 'King Size Bed', '3000', 0),
+(341, 115, 'King Size Bed', '3000', 0),
+(342, 116, 'King Size Bed', '3000', 0),
+(343, 117, 'King Size Bed', '3000', 0),
+(344, 118, 'King Size Bed', '3000', 0);
 
 -- --------------------------------------------------------
 
@@ -155,19 +193,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reservation_table`
 --
 ALTER TABLE `reservation_table`
-  MODIFY `Rev_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `Rev_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `room_table`
 --
 ALTER TABLE `room_table`
-  MODIFY `Roomid` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+  MODIFY `Roomid` int(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
 
 --
 -- AUTO_INCREMENT for table `staff`
