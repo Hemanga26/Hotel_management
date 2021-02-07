@@ -17,9 +17,9 @@ include('Database.php');
 
 <body>
 
-  <!--Nevbar-->
+   <!--Nevbar-->
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand text-dark" href="#">The RIVERWAYS RETREAT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -38,14 +38,9 @@ include('Database.php');
           <li class="nav-item">
             <a class="nav-link" href="/index.php#room">Rooms</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Conference Hall</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="/index.php#contactus">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/">LOG IN</a>
           </li>
         </ul>
 

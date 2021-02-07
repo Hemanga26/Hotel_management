@@ -58,13 +58,7 @@ if(isset($_POST["sendmsg"]))
             <a class="nav-link" href="#room">Rooms</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Conference Hall</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#contactus">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/">LOG IN</a>
           </li>
         </ul>
 

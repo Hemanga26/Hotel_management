@@ -37,14 +37,9 @@ include('Database.php');
           <li class="nav-item">
             <a class="nav-link" href="/index.php#room">Rooms</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Conference Hall</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="/index.php#contactus">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/admin/">LOG IN</a>
           </li>
         </ul>
 
