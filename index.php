@@ -159,6 +159,7 @@ if(isset($_POST["sendmsg"]))
 
   <!-- contact form -->
   <!-- Contact Us Section -->
+
   <section class="Material-contact-section section-padding section-dark" id="contactus">
     <div class="container">
       <div class="row">
@@ -169,28 +170,7 @@ if(isset($_POST["sendmsg"]))
       </div>
       <div class="row">
         <!-- Section Titile -->
-        <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-            letters, as opposed to using Content.</p>
-
-          <div class="find-widget">
-            HOTEL: <a href="https://hostriver.ro">Goa permises</a>
-          </div>
-          <div class="find-widget">
-            Address: <a href="#">south goa</a>
-          </div>
-          <div class="find-widget">
-            Phone: <a href="#">+ 879-890-9767</a>
-          </div>
-
-          <div class="find-widget">
-            Website: <a href="https://uny.ro">www.index.html</a>
-          </div>
-          <div class="find-widget">
-            Program: <a href="#">Mon to Sat: 09:30 AM - 10.30 PM</a>
-          </div>
-        </div>
+        
         <!-- contact form -->
         <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
           <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
