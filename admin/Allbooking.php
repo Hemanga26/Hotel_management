@@ -20,7 +20,7 @@ if(isset($_POST["Delete"]))
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <i class="fas fa-home mr-1"></i>
+                    <i class="fas fa-bars mr-1"></i>
                     All Customers
                 </div>
                 <div class="card-body">
@@ -73,7 +73,7 @@ if(isset($_POST["Delete"]))
                
                                                         <form action="viewdetails.php" method="POST" class="d-inline"> 
                                                             <input type="hidden" name="id" value='. $row["Rev_id"] .'>
-                                                            <button type="submit" class="btn btn-info" name="View" value="View">
+                                                            <button type="submit" class="btn btn-success" name="View" value="View">
                                                             <i class="fas fa-eye"></i> View/Confirm
                                                             </button>
                                                         </form>
@@ -94,6 +94,24 @@ if(isset($_POST["Delete"]))
                                                             <input type="hidden" name="id" value='. $row["Rev_id"] .'>
                                                             <button type="submit" class="btn btn-info" name="View" value="View">
                                                             <i class="fas fa-eye"></i> View/Confirm
+                                                            </button>
+                                                        </form>
+
+                                                        <form action="" method="post" class="d-inline">
+                                                            <input type="hidden" name="id" value='.$row["Rev_id"].'>
+                                                            <button class="btn btn-danger" name="Delete" type="submit">
+                                                            <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </form>';
+                                                    }
+                                                    else if($row["status"] == 3)
+                                                    {
+                                                        echo '
+                                                        
+                                                        <form action="viewdetails.php" method="POST" class="d-inline"> 
+                                                            <input type="hidden" name="id" value='. $row["Rev_id"] .'>
+                                                            <button type="submit" class="btn btn-danger" name="View" value="View">
+                                                            REJECTED
                                                             </button>
                                                         </form>
 

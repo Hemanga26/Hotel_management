@@ -11,7 +11,7 @@ if(isset($_POST["checkout"]))
     $conn->query($sql2);
     echo '
     <script>
-    alert("ChekOut Completed");
+    alert("CheckOut Completed");
     window.location.href = "bookings.php";
     </script>';
 }

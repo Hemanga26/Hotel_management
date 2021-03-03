@@ -1,5 +1,24 @@
 <?php 
 include('include/header.php');
+
+// reject
+if(isset($_POST["reject"]))
+{
+    $id = $_POST["id"];
+    $rno = $_POST["roomid"];
+
+    $sql = "UPDATE `reservation_table` SET `status`= 3 WHERE `Rev_id`= '{$id}'";
+    $conn->query($sql);
+
+    // update room
+    $sql2 = "UPDATE `room_table` SET `Room_status`= '0' WHERE `RoomNo` =  '{$rno}'";
+    $conn->query($sql2);
+    echo '
+    <script>
+    alert("Rejected");
+    window.location.href = "bookings.php";
+    </script>';
+}
  ?>
 <div id="layoutSidenav_content">
     <main>
@@ -9,7 +28,7 @@ include('include/header.php');
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <i class="fas fa-home mr-1"></i>
+                    <i class="fas fa-calendar-alt mr-1"></i>
                     requests
                 </div>
                 <div class="card-body">
@@ -46,6 +65,12 @@ include('include/header.php');
                                                 <form action="newbooking.php" method="POST" class="d-inline">
                                                     <input type="hidden" name="id" value='.$row["Rev_id"].'>
                                                     <button type="submit" class="btn btn-primary m-2 " name="View">Approve</button>
+                                                </form>
+
+                                                <form action="" method="POST" class="d-inline">
+                                                    <input type="hidden" name="id" value='.$row["Rev_id"].'>
+                                                    <input type="hidden" name="roomid" value='.$row["Rev_roomno"].'>
+                                                    <button type="submit" class="btn btn-danger m-2 " name="reject">Reject</button>
                                                 </form>
                                                 
                                                 </td>

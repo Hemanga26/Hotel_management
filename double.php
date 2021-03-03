@@ -1,5 +1,9 @@
 <?php
+error_reporting(0);
 include('Database.php');
+
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +15,13 @@ include('Database.php');
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
-  <!--Nevbar-->
+   <!--Nevbar-->
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
@@ -32,15 +37,31 @@ include('Database.php');
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/index.php#about">About Us</a>
+            <a class="nav-link" href="/#about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/index.php#room">Rooms</a>
+            <a class="nav-link" href="/#room">Rooms</a>
           </li>
-          
           <li class="nav-item">
-            <a class="nav-link" href="/index.php#contactus">Contact Us</a>
+            <a class="nav-link" href="/#contactus">Contact Us</a>
           </li>
+          <?php
+          if(!$_SESSION["uid"])
+          {
+            echo '
+            <li class="nav-item">
+            <a class="nav-link" href="Login.php">Login</a>
+             </li>';
+          }
+          else
+          {
+            echo '
+            <li class="nav-item">
+            <a class="nav-link" href="account.php">'.$_SESSION["uname"].'</a>
+            </li>';
+          }
+          ?>
+         
         </ul>
 
       </div>

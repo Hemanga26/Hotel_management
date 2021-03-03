@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <?php
+error_reporting(0);
 include('Database.php');
-$msg = '';
+
+session_start();
+
 if(isset($_POST["sendmsg"]))
 {
   $name = $_POST["name"];
   $email = $_POST["email"];
   $subject = $_POST["subject"];
   $msg = $_POST["message"];
+  
+  $msg = $conn->real_escape_string($_POST["message"]);
 
   $sql = "INSERT INTO `message`(`name`, `mail`, `sub`, `msg`) VALUES ('$name','$email','$subject','$msg')";
   $conn->query($sql);
@@ -19,6 +24,7 @@ if(isset($_POST["sendmsg"]))
   ';
 
 }
+
 ?>
 <html lang="en">
 
@@ -29,8 +35,10 @@ if(isset($_POST["sendmsg"]))
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" />
   </script>
 </head>
 
@@ -60,6 +68,23 @@ if(isset($_POST["sendmsg"]))
           <li class="nav-item">
             <a class="nav-link" href="#contactus">Contact Us</a>
           </li>
+          <?php
+          if(!$_SESSION["uid"])
+          {
+            echo '
+            <li class="nav-item">
+            <a class="nav-link" href="Login.php">Login/Signup</a>
+             </li>';
+          }
+          else
+          {
+            echo '
+            <li class="nav-item">
+            <a class="nav-link" href="account.php">'.$_SESSION["uname"].'</a>
+            </li>';
+          }
+          ?>
+         
         </ul>
 
       </div>
@@ -122,7 +147,7 @@ if(isset($_POST["sendmsg"]))
             <img src="image/x1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Single Bed Room</h5>
-              <p class="card-text"><i class="fas fa-bed"></i>1 Single bed</p>
+              <p class="card-text"><i class="fa fa-bed"></i>1 Single bed</p>
               <a href="single.php" class="btn btn-primary">BOOK NOW</a>
             </div>
           </div>
@@ -133,7 +158,7 @@ if(isset($_POST["sendmsg"]))
             <img src="image/x2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">DOuble Bed Room</h5>
-              <p class="card-text"><i class="fas fa-bed"></i> 2 Single bed</p>
+              <p class="card-text"><i class="fa fa-bed"></i> 2 Single bed</p>
               <a href="double.php" class="btn btn-primary">BOOK NOW</a>
             </div>
           </div>
@@ -144,7 +169,7 @@ if(isset($_POST["sendmsg"]))
             <img src="image/x3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Triple Bed Room</h5>
-              <p class="card-text"><i class="fas fa-bed"></i> 1 King Size bed</p>
+              <p class="card-text"><i class="fa fa-bed"></i> 1 King Size bed</p>
               <a href="king.php" class="btn btn-primary">BOOK NOW</a>
             </div>
           </div>
@@ -198,11 +223,10 @@ if(isset($_POST["sendmsg"]))
             <!-- Message -->
             <div class="form-group label-floating">
               <label for="message" class="control-label">Message</label>
-              <textarea class="form-control" rows="3" id="message" name="message" required
+              <textarea class="form-control" rows="3" maxlength="500" id="message" name="message" required
                 data-error="Write your message"></textarea>
               <div class="help-block with-errors"></div>
             </div>
-            <p class="text-success"><?php echo $msg; ?></p>
             <!-- Form Submit -->
             <div class="form-submit mt-5">
               <button class="btn btn-succes" type="submit" name="sendmsg"> Send Message</button>
