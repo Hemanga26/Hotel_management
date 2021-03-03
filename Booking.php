@@ -185,7 +185,7 @@ if(isset($_POST["adddroom"]))
           <div class="form-group row">
             <label for="" class="col-sm-2 col-form-label text-dark">Phone No</label>
             <div class="col-sm-10">
-              <input type="number" minlength="10" maxlength="12" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"  class="form-control" placeholder="Phone Number" name="cphn" required >
+              <input type="text" class="form-control" pattern="[7-9]{1}[0-9]{9}"   placeholder="e.g : +919876543210" name="cphn" required >
             </div>
           </div>
 
