@@ -157,7 +157,7 @@ font-size: 20px;
                      <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                     <input type="number" name="phone" id="phone" pattern="[7-9]{1}[0-9]{9}"  class="form-control my-input" placeholder="Phone">
+                     <input type="text" name="phone" id="phone" pattern="[7-9]{1}[0-9]{9}"  class="form-control my-input" placeholder="Phone">
                   </div>
                   <div class="form-group">
                      <input type="text" name="password" class="form-control my-input" placeholder="password">
