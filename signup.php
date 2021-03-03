@@ -157,7 +157,7 @@ font-size: 20px;
                      <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
                   </div>
                   <div class="form-group">
-                     <input type="number" min="0" name="phone" id="phone" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"  class="form-control my-input" placeholder="Phone">
+                     <input type="number" name="phone" id="phone" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"  class="form-control my-input" placeholder="Phone">
                   </div>
                   <div class="form-group">
                      <input type="text" name="password" class="form-control my-input" placeholder="password">
