@@ -1,12 +1,12 @@
 <?php include('Database.php'); 
 session_start();
 
-if(!$_SESSION["uid"])
+if(!$_SESSION["id"])
 {
   header("Location: /");
 }
 
-$query = "SELECT * FROM `users_tb` WHERE `uid` = '{$_SESSION["uid"]}' ";
+$query = "SELECT * FROM `users` WHERE `id` = '{$_SESSION["id"]}' ";
 $ret=$conn->query($query);
 $data = $ret->fetch_assoc();
 ?>
@@ -54,7 +54,7 @@ $data = $ret->fetch_assoc();
             <a class="nav-link" href="/#contactus">Contact Us</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="account.php"><?php echo $_SESSION["uname"]?></a>
+          <a class="nav-link" href="account.php"><?php echo $_SESSION["name"]?></a>
           </li>
         </ul>
 

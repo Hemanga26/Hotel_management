@@ -3,7 +3,7 @@
 error_reporting(0);
 session_start();
 $msg = "";
-if(isset($_SESSION["uid"]))
+if(isset($_SESSION["id"]))
 {
     header("Location: account.php");
 }
@@ -14,18 +14,18 @@ else
     {
         include('Database.php');
 
-        $email = $_POST["uemail"];
-        $pass = $_POST["upass"];
+        $email = $_POST["email"];
+        $pass = $_POST["pass"];
 
-        $sql = "SELECT `uid`, `uname`  FROM `users_tb` WHERE `uemail` = '{$email}' AND `upassword` = '{$pass}'";
+        $sql = "SELECT `id`, `name`  FROM `users` WHERE `email` = '{$email}' AND `password` = '{$pass}'";
         // echo $sql; die();
         $result = $conn->query($sql);
         if(mysqli_num_rows($result) > 0)
         {
             while($row = $result->fetch_assoc())
             {
-                $_SESSION["uid"] = $row["uid"];
-                $_SESSION["uname"] = $row["uname"];
+                $_SESSION["id"] = $row["id"];
+                $_SESSION["name"] = $row["name"];
                 header("Location: Account.php");
             }
         }

@@ -10,7 +10,7 @@ else{
     
     include('Database.php');
 
-    $csql = "SELECT `uemail` FROM `users_tb` WHERE `uemail` = '{$_POST["uemail"]}'";
+    $csql = "SELECT `email` FROM `users` WHERE `email` = '{$_POST["email"]}'";
     $dta = $conn->query($csql);
 
     if(mysqli_num_rows($dta) > 0)
@@ -28,12 +28,12 @@ else{
     {
         if(isset($_POST["Createac"]))
     {
-        $name = $_POST["uname"];
-        $email = $_POST["uemail"];
-        $phone = $_POST["uphone"];
-        $password = $_POST["upassword"];
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $phone = $_POST["phone"];
+        $password = $_POST["password"];
     
-        $query = "INSERT INTO `users_tb`(`uname`, `uemail`, `uphone`, `upassword`) 
+        $query = "INSERT INTO `users`(`name`, `email`, `phone`, `password`) 
         VALUES ('$name','$email','$phone','$password')";
         $conn->query($query);
         echo '
