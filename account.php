@@ -6,7 +6,7 @@ if(!$_SESSION["uid"])
   header("Location: /");
 }
 
-$query = "SELECT * FROM `customers` WHERE `id` = '{$_SESSION["uid"]}' ";
+$query = "SELECT * FROM `users_tb` WHERE `uid` = '{$_SESSION["uid"]}' ";
 $ret=$conn->query($query);
 $data = $ret->fetch_assoc();
 ?>

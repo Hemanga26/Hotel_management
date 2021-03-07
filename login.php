@@ -17,15 +17,15 @@ else
         $email = $_POST["uemail"];
         $pass = $_POST["upass"];
 
-        $sql = "SELECT `id`, `name`  FROM `customers` WHERE `email` = '{$email}' AND `password` = '{$pass}'";
+        $sql = "SELECT `uid`, `uname`  FROM `users_tb` WHERE `uemail` = '{$email}' AND `upassword` = '{$pass}'";
         // echo $sql; die();
         $result = $conn->query($sql);
         if(mysqli_num_rows($result) > 0)
         {
             while($row = $result->fetch_assoc())
             {
-                $_SESSION["uid"] = $row["id"];
-                $_SESSION["uname"] = $row["name"];
+                $_SESSION["uid"] = $row["uid"];
+                $_SESSION["uname"] = $row["uname"];
                 header("Location: Account.php");
             }
         }
